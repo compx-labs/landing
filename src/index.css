@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --compx-dark: #0b0e2d;
+  --compx-purple: #493287;
+  --compx-pink: #FF66C4;
+}
+
+body {
+  @apply bg-compx-dark text-white font-sans antialiased;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-compx-pink text-white hover:bg-compx-pink-light;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-compx-purple text-white hover:bg-compx-purple-light;
+  }
+  
+  .btn-outline {
+    @apply btn border-2 border-compx-purple text-white hover:bg-compx-purple hover:border-compx-purple-light;
+  }
+  
+  .glass-card {
+    @apply bg-compx-dark/40 backdrop-blur-lg border border-compx-purple/20 rounded-xl;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #FF66C4, #493287);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--compx-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--compx-purple);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--compx-pink);
+}
