@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
 
-const navLinks = [
-  { name: 'Features', href: '#features' },
-  { name: 'Values', href: '#values' },
-  { name: 'Ecosystem', href: '#ecosystem' },
-  { name: 'Docs', href: '#docs' },
-  { name: 'Governance', href: '#governance' },
-];
+
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,15 +31,7 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-white/80 hover:text-compx-pink transition-colors duration-300 font-medium"
-              >
-                {link.name}
-              </a>
-            ))}
+            
             <a
               href="https://app.compx.io"
               target="_blank"
@@ -58,49 +42,12 @@ const Navbar: React.FC = () => {
             </a>
           </nav>
 
-          {/* Mobile menu button */}
-          <button
-            type="button"
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:text-compx-pink"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden bg-compx-dark/95 backdrop-blur-lg"
-        >
-          <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="block px-3 py-2 text-white/80 hover:text-compx-pink font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            <a
-              href="https://app.compx.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block px-3 py-2 text-compx-pink font-medium"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Launch App
-            </a>
-          </div>
-        </motion.div>
-      )}
+      
     </motion.header>
   );
 };

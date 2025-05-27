@@ -8,9 +8,9 @@ const Logo: React.FC = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <a href="#" className="h-8 block">
+      <a href="#" className="h-12 block">
         <img 
-          src="/1.png" 
+          src="/logo.svg" 
           alt="CompX" 
           className="h-full w-auto"
         />

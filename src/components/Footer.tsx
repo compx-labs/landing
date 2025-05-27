@@ -1,13 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Twitter, 
   Github, 
-  Gitlab, 
   Send, 
   BookOpen, 
-  Shield, 
-  HelpCircle 
+  X,
+  Youtube
 } from 'lucide-react';
 import Logo from './Logo';
 
@@ -18,38 +16,36 @@ const Footer: React.FC = () => {
     {
       title: 'Products',
       links: [
-        { name: 'Farms', href: '#' },
-        { name: 'Staking', href: '#' },
-        { name: 'xUSD CDP', href: '#' },
-        { name: 'X-NFT', href: '#' },
-        { name: 'Swap', href: '#' },
+        { name: 'Farms', href: 'https://app.compx.io/farms' },
+        { name: 'Staking', href: 'https://app.compx.io/staking-pools' },
+        { name: 'xUSD CDP', href: 'https://app.compx.io/cdp/vaults' },
+        { name: 'X-NFT', href: 'https://app.compx.io/x-nft' },
+        { name: 'Swap', href: 'https://app.compx.io/swap' },
       ]
     },
     {
       title: 'Resources',
       links: [
-        { name: 'Documentation', href: '#', icon: <BookOpen size={16} /> },
-        { name: 'Tutorials', href: '#' },
-        { name: 'Security', href: '#', icon: <Shield size={16} /> },
-        { name: 'FAQ', href: '#', icon: <HelpCircle size={16} /> },
+        { name: 'Documentation', href: 'https://compx-documentation.gitbook.io/compx-documentation', icon: <BookOpen size={16} /> },
+        { name: 'Tutorials', href: 'https://www.youtube.com/@CompXLabs' },
+
       ]
     },
     {
       title: 'Community',
       links: [
-        { name: 'Governance', href: '#' },
-        { name: 'Forum', href: '#' },
-        { name: 'Discord', href: '#' },
-        { name: 'Blog', href: '#' },
+        { name: 'X', href: 'https://x.com/compxlabs' },
+        { name: 'Discord', href: 'https://discord.gg/pSG93C6UN8' },
+        { name: 'Telegram', href: 'https://t.me/Alammex_Compx' },
       ]
     }
   ];
   
   const socialLinks = [
-    { icon: <Twitter size={20} />, href: '#', label: 'Twitter' },
-    { icon: <Github size={20} />, href: '#', label: 'GitHub' },
-    { icon: <Gitlab size={20} />, href: '#', label: 'GitLab' },
-    { icon: <Send size={20} />, href: '#', label: 'Telegram' },
+    { icon: <X size={20} />, href: 'https://x.com/compxlabs', label: 'X' },
+    { icon: <Github size={20} />, href: 'https://github.com/compx-labs', label: 'GitHub' },
+    { icon: <Send size={20} />, href: 'https://t.me/Alammex_Compx', label: 'Telegram' },
+    { icon: <Youtube size={20} />, href: 'https://www.youtube.com/@CompXLabs', label: 'Youtube' },
   ];
 
   return (
@@ -89,6 +85,8 @@ const Footer: React.FC = () => {
                     <a 
                       href={link.href} 
                       className="text-white/70 hover:text-compx-pink transition-colors flex items-center gap-2"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       {link.icon && link.icon}
                       {link.name}
@@ -99,32 +97,12 @@ const Footer: React.FC = () => {
             </div>
           ))}
           
-          <div className="lg:col-span-1">
-            <h4 className="text-lg font-semibold mb-4">Subscribe</h4>
-            <p className="text-white/70 mb-4">Stay updated with our newsletter</p>
-            <div className="relative">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                className="w-full px-4 py-2 rounded-lg bg-compx-dark-light border border-compx-purple/30 text-white focus:outline-none focus:border-compx-pink"
-              />
-              <button 
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-compx-pink hover:text-compx-pink-light"
-                aria-label="Subscribe"
-              >
-                <Send size={18} />
-              </button>
-            </div>
-          </div>
+          
         </div>
         
         <div className="border-t border-white/10 pt-8 mt-8 text-center text-white/50 text-sm">
           <p>© {currentYear} CompX. All rights reserved.</p>
-          <div className="flex justify-center space-x-6 mt-4">
-            <a href="#" className="hover:text-compx-pink transition-colors">Terms</a>
-            <a href="#" className="hover:text-compx-pink transition-colors">Privacy</a>
-            <a href="#" className="hover:text-compx-pink transition-colors">Disclaimers</a>
-          </div>
+
         </div>
       </div>
     </footer>

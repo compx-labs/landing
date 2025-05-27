@@ -84,15 +84,10 @@ const Hero: React.FC = () => {
                   </div>
                   <div className="bg-compx-dark/80 rounded-lg p-4 transform hover:scale-105 transition-transform">
                     <h3 className="text-compx-pink font-semibold mb-2">X-NFT</h3>
-                    <p className="text-white/70 text-sm">Where NFTs meet DeFi functionality</p>
+                    <p className="text-white/70 text-sm">Where NFTs meet DeFi</p>
                   </div>
                 </div>
-                <div className="mt-4 bg-gradient-to-r from-compx-purple to-compx-pink p-0.5 rounded-lg">
-                  <div className="bg-compx-dark/90 rounded-lg p-4 text-center">
-                    <p className="text-white font-semibold">Total Value Locked</p>
-                    <p className="text-3xl font-bold text-compx-pink">$3,934,284.92</p>
-                  </div>
-                </div>
+
               </div>
             </div>
           </motion.div>
