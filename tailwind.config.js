@@ -4,16 +4,21 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Space Grotesk', 'sans-serif'],
+        sans: ['Share Tech Mono', 'monospace'],
+        mono: ['Share Tech Mono', 'monospace'],
       },
       colors: {
+        nebula: {
+          900: '#0A0724',
+          800: '#120D35',
+          700: '#1A1445',
+        },
         compx: {
-          dark: '#0b0e2d',
-          purple: '#493287',
+          purple: '#7F4AFF',
           pink: '#FF66C4',
-          'pink-light': '#FF8CD3',
-          'purple-light': '#6943B5',
-          'dark-light': '#1a1f4d',
+          'pink-light': '#FF73B8',
+          teal: '#00F5C0',
+          bronze: '#F9A826',
         },
       },
       backgroundImage: {

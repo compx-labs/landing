@@ -3,35 +3,58 @@
 @tailwind utilities;
 
 :root {
-  --compx-dark: #0b0e2d;
-  --compx-purple: #493287;
+  --nebula-900: #0A0724;
+  --compx-purple: #7F4AFF;
   --compx-pink: #FF66C4;
+  --compx-teal: #00F5C0;
+  --compx-bronze: #F9A826;
 }
 
 body {
-  @apply bg-compx-dark text-white font-sans antialiased;
+  @apply font-sans antialiased;
+  background: #000000;
+  color: #FF66C4;
   overflow-x: hidden;
 }
 
 @layer components {
-  .btn {
-    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center gap-2;
-  }
-
-  .btn-primary {
-    @apply btn bg-compx-pink text-white hover:bg-compx-pink-light;
+  /* Glass panel with frosted effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
   }
   
-  .btn-secondary {
-    @apply btn bg-compx-purple text-white hover:bg-compx-purple-light;
+  /* Holographic border gradient */
+  .holo-border {
+    @apply border border-transparent bg-gradient-to-r from-compx-purple via-compx-pink to-compx-teal bg-clip-border;
+    border-width: 1px;
   }
   
-  .btn-outline {
-    @apply btn border-2 border-compx-purple text-white hover:bg-compx-purple hover:border-compx-purple-light;
+  /* Blueprint grid background */
+  .blueprint-bg {
+    background-image: 
+      repeating-linear-gradient(0deg, rgba(127, 74, 255, 0.1) 0px, transparent 1px, transparent 40px),
+      repeating-linear-gradient(90deg, rgba(127, 74, 255, 0.1) 0px, transparent 1px, transparent 40px);
   }
   
-  .glass-card {
-    @apply bg-compx-dark/40 backdrop-blur-lg border border-compx-purple/20 rounded-xl;
+  /* Starfield background */
+  .starfield {
+    background-image: 
+      radial-gradient(2px 2px at 20% 30%, white, transparent),
+      radial-gradient(2px 2px at 60% 70%, white, transparent),
+      radial-gradient(1px 1px at 50% 50%, white, transparent),
+      radial-gradient(1px 1px at 80% 10%, rgba(127, 74, 255, 0.8), transparent),
+      radial-gradient(2px 2px at 90% 60%, rgba(0, 245, 192, 0.6), transparent),
+      radial-gradient(1px 1px at 33% 80%, rgba(255, 115, 184, 0.7), transparent);
+    background-size: 200% 200%;
+    background-position: 0% 0%, 40% 60%, 130% 130%, 20% 90%, 70% 20%, 15% 70%;
+  }
+  
+  /* Grid overlay for sections */
+  .grid-overlay {
+    background-image: 
+      linear-gradient(rgba(127, 74, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(127, 74, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
   }
 
   .section-padding {
@@ -43,8 +66,20 @@ body {
   }
 }
 
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Text gradient utility */
 .text-gradient {
-  background: linear-gradient(90deg, #FF66C4, #493287);
+  background: linear-gradient(90deg, var(--compx-pink), var(--compx-purple), var(--compx-teal));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -53,16 +88,16 @@ body {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--compx-dark);
+  background: var(--nebula-900);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--compx-purple);
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
