@@ -6,9 +6,10 @@ interface CardCarouselProps {
   title: string;
   subtitle?: string;
   items: ProductCardData[];
+  headerButton?: React.ReactNode;
 }
 
-export const CardCarousel = ({ title, subtitle, items }: CardCarouselProps) => {
+export const CardCarousel = ({ title, subtitle, items, headerButton }: CardCarouselProps) => {
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [cardWidth, setCardWidth] = useState(0);
@@ -96,15 +97,24 @@ export const CardCarousel = ({ title, subtitle, items }: CardCarouselProps) => {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <header className="mb-6 md:mb-8 text-center">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-white">
-            {title}
-          </h2>
-          {subtitle && (
-            <p className="mt-2 md:mt-3 text-sm md:text-base text-white/70 max-w-2xl mx-auto">
-              {subtitle}
-            </p>
-          )}
+        <header className="mb-6 md:mb-8">
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex-1 min-w-0">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-white">
+                {title}
+              </h2>
+              {subtitle && (
+                <p className="mt-2 md:mt-3 text-sm md:text-base text-white/70 max-w-2xl">
+                  {subtitle}
+                </p>
+              )}
+            </div>
+            {headerButton && (
+              <div className="flex-shrink-0">
+                {headerButton}
+              </div>
+            )}
+          </div>
         </header>
 
         {/* Carousel Container */}
