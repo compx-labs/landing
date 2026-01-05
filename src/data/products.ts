@@ -3,12 +3,12 @@ import type { ProductCardData } from '../types';
 export const PRODUCTS: ProductCardData[] = [
   {
     id: "core",
-    name: "CompX Core",
-    tagline: "Your DeFi command center.",
-    description: "Your gateway to decentralized finance on Algorand. Swap tokens, earn from liquidity farms and staking pools, mint xUSD stablecoin, collect X-NFTs, and participate in governance to shape the future of DeFi.",
+    name: "CORE",
+    tagline: "The ecosystem engine.",
+    description: "Core is where xUSD lives, governance decisions are made, and protocol incentives are distributed. It anchors every CompX product, aligning users, liquidity, and long-term protocol growth through shared ownership and governance.",
     image: { src: "/img/core-hero.png", alt: "CompX Core dashboard", aspect: "16x9" },
     badge: "Live",
-    cta: { label: "Launch Core", href: "https://app.compx.io" },
+    cta: { label: "Launch Core", href: "https://core.compx.io" },
     secondary: { label: "Learn more", href: "/docs/core" }
   },
   {
