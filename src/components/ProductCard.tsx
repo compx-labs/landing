@@ -23,7 +23,13 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         
         {/* Badge */}
         {product.badge && (
-          <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-pink-500/90 backdrop-blur-sm text-white text-xs font-medium tracking-wide uppercase">
+          <div className={`absolute top-4 right-4 px-3 py-1 rounded-full backdrop-blur-sm text-white text-xs font-medium tracking-wide uppercase ${
+            product.badge === "Testnet" 
+              ? "bg-blue-500/90" 
+              : product.badge === "Live"
+              ? "bg-pink-500/90"
+              : "bg-pink-500/90"
+          }`}>
             {product.badge}
           </div>
         )}
@@ -70,7 +76,13 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             className="w-full h-auto"
           />
           {product.badge && (
-            <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-pink-500/90 backdrop-blur-sm text-white text-xs font-medium tracking-wide uppercase">
+            <div className={`absolute top-4 right-4 px-3 py-1 rounded-full backdrop-blur-sm text-white text-xs font-medium tracking-wide uppercase ${
+              product.badge === "Testnet" 
+                ? "bg-blue-500/90" 
+                : product.badge === "Live"
+                ? "bg-pink-500/90"
+                : "bg-pink-500/90"
+            }`}>
               {product.badge}
             </div>
           )}

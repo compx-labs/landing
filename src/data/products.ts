@@ -21,6 +21,15 @@ export const PRODUCTS: ProductCardData[] = [
     cta: { label: "Start a Route", href: "https://waypoint.compx.io/" }
   },
   {
+    id: "delta",
+    name: "Delta",
+    tagline: "The neutral incentives network.",
+    description: "Permissionless pool creation, long-running incentive programs, and any ASA supported.",
+    image: { src: "/img/delta-hero.png", alt: "Delta pools overview", aspect: "16x9" },
+    badge: "Testnet",
+    cta: { label: "Launch Delta", href: "https://delta.compx.io/" }
+  },
+  {
     id: "orbital",
     name: "Orbital Lending",
     tagline: "Borrow against LSTs. Transparent, capital-efficient.",
@@ -36,7 +45,7 @@ export const PRODUCTS: ProductCardData[] = [
     tagline: "Hunt down the best yields on Algorand.",
     description: "Your gateway to the best DeFi yields. Hunt for optimal returns across multiple platforms. Track yields, compare platforms, and maximize your crypto earnings with real-time data.",
     image: { src: "/img/canix-hero.png", alt: "Canix trading interface", aspect: "16x9" },
-    badge: "New",
+    badge: "Live",
     cta: { label: "Launch Canix", href: "https://canix.compx.io/" }
   },
   {
